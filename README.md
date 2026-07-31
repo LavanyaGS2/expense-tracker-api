@@ -2,20 +2,19 @@
 
 ## Overview
 
-The Smart Expense Tracker API is a RESTful web service developed using **Java** and **Spring Boot**. It helps users manage their personal expenses by allowing them to add, view, filter, calculate, and delete expense records. The application uses **in-memory storage (ArrayList)**, so no database setup is required.
-
----
+The Smart Expense Tracker API is a RESTful web service built using **Java** and **Spring Boot** to manage personal expenses. The application stores data in memory using an `ArrayList`, so no database setup is required.
 
 ## Features
 
 - Add a new expense
 - View all expenses
 - Filter expenses by category
-- Calculate the total of all expenses
-- Calculate the total expenses for a specific category
+- Calculate total expenses
+- Calculate total expenses by category
 - Delete an expense
 - Input validation using Spring Validation
-- Unit testing using JUnit 5
+- Unit tests using JUnit 5
+- In-memory data storage (no database required)
 
 ---
 
@@ -33,31 +32,26 @@ The Smart Expense Tracker API is a RESTful web service developed using **Java** 
 
 ## Prerequisites
 
-Before running the application, ensure you have:
+Before running the project, make sure you have:
 
 - Java 17 or later
 - Maven 3.8 or later
-- Eclipse IDE / IntelliJ IDEA
-- Postman (for API testing)
+- Git
+- Eclipse IDE or IntelliJ IDEA
 
 ---
 
 ## Project Structure
 
-```
-expense-tracker
-│
-├── src
-│   ├── main
-│   │   ├── java
-│   │   └── resources
-│   └── test
-│       └── java
+```text
+expense-tracker-api
 │
 ├── README.md
 ├── AI_NOTES.md
 ├── pom.xml
-└── mvnw
+├── src
+│   ├── main
+│   └── test
 ```
 
 ---
@@ -76,27 +70,33 @@ Move to the project directory:
 cd expense-tracker-api
 ```
 
+Install all dependencies:
+
+```bash
+mvn clean install
+```
+
 ---
 
-## Running the Application
+## Run the Application
 
-Run the Spring Boot application:
+Start the Spring Boot application:
 
 ```bash
 mvn spring-boot:run
 ```
 
-The application starts at:
+The application will start at:
 
-```
+```text
 http://localhost:8083
 ```
 
 ---
 
-## Running Unit Tests
+## Run the Tests
 
-Execute:
+Execute the unit tests:
 
 ```bash
 mvn test
@@ -104,71 +104,73 @@ mvn test
 
 ---
 
-# REST API Endpoints
+## REST API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
 | POST | `/expenses` | Add a new expense |
 | GET | `/expenses` | View all expenses |
-| GET | `/expenses/category/{category}` | View expenses by category |
-| GET | `/expenses/total` | Get total expenses |
-| GET | `/expenses/total/{category}` | Get total expenses for a category |
+| GET | `/expenses/category/{category}` | Filter expenses by category |
+| GET | `/expenses/total` | Calculate total expenses |
+| GET | `/expenses/total/{category}` | Calculate total expenses by category |
 | DELETE | `/expenses/{id}` | Delete an expense |
 
 ---
 
-# Sample Request
+## Sample Request
 
-### POST `/expenses`
+**POST** `/expenses`
 
 ```json
 {
-    "title": "Grocery Shopping",
-    "amount": 1850,
-    "category": "Groceries",
-    "date": "2026-07-31"
+  "title": "Grocery Shopping",
+  "amount": 1850,
+  "category": "Groceries",
+  "date": "2026-07-31"
 }
 ```
 
 ---
 
-# Sample Response
+## Sample Response
 
 ```json
 {
-    "id": 1,
-    "title": "Grocery Shopping",
-    "amount": 1850.0,
-    "category": "Groceries",
-    "date": "2026-07-31"
+  "id": 1,
+  "title": "Grocery Shopping",
+  "amount": 1850.0,
+  "category": "Groceries",
+  "date": "2026-07-31"
 }
 ```
 
 ---
 
-# Testing
+## Testing
 
 The application was tested using:
 
 - Postman
 - JUnit 5
 
-All endpoints were verified successfully.
+All REST API endpoints and unit tests were verified successfully.
 
 ---
 
-# Future Improvements
+## Future Improvements
 
-- Store data in MySQL or PostgreSQL
-- User authentication with Spring Security
-- Expense update functionality
-- Monthly expense reports
+- Store expenses in a database (MySQL/PostgreSQL)
+- Add update expense functionality
+- Add user authentication
+- Generate monthly expense reports
 - Docker support
 
 ---
 
-# Author
+## Author
 
 **Lavanya G S**
+
+BE – Computer Science and Engineering
 
 Software Engineering Apprenticeship Assignment – Diligent Corporation
