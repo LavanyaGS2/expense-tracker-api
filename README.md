@@ -67,7 +67,7 @@ expense-tracker
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/expense-tracker-api.git
+git clone https://github.com/LavanyaGS2/expense-tracker-api.git
 ```
 
 Move to the project directory:
